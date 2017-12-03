@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+
+
+//var remainingDays    = dateDiffInDays(a, b);
+
+//function dateDiffInDays(a, b) {
+var x = setInterval(function() {
+  var a = new Date();
+  //var b = new Date("2016-08-11");
+  var b = new Date("Aug 11, 2016 12:00:00");
+
+
+
+  var year1 = Date.UTC(a.getFullYear());
+  var year2 = Date.UTC(b.getFullYear());
+  var month1 = Date.UTC(a.getMonth());
+  var month2 = Date.UTC(b.getMonth());
+  var dat1 = Date.UTC(a.getDate());
+  var dat2 = Date.UTC(b.getDate());
+/*
+  return Math.floor((year2 - year1));
+  return Math.floor((month2 - month1));
+  return Math.floor((dat2 - dat1));*/
+  var yum = year1 - year2;
+  var mum = month1 - month2;
+  var dum = dat1 - dat2;
+
+
+var years = Math.floor(yum);
+var months = Math.floor(mum);
+var days = Math.floor(dum);
+
+  document.getElementById("demo").innerHTML = years + "Year('s) " + months + "Month('s) "
+  + days + "Day('s) "
+
+
+},1000);
+
+// Update the count down every 1 second
+//var x = setInterval(function() {
+
+    // Get todays date and time
+  //  var now = new Date().getFullYear();
+
+    // Find the distance between now an the count down date
+    //var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+  //  var days = Math.floor(distance);
+    //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    //document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    //+ minutes + "m " + seconds + "s ";
+
+    // If the count down is over, write some text
+    //if (distance < 0) {
+      //  clearInterval(x);
+        //document.getElementById("demo").innerHTML = "EXPIRED";
+    //}
+//}, 1000);
+</script>
+
+</body>
+</html>
