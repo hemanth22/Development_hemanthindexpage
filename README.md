@@ -5,4 +5,5 @@ Test Link: https://hemanth22.github.io/Development_hemanthindexpage/
 
 Link: https://hemanth22.github.io/hemanthindexpage/
 
-[![AppVeyor branch](https://img.shields.io/appveyor/ci/gruntjs/grunt/master.svg?style=plastic)]() | ![AppVeyor branch](deloy-passed-brightgree.png) | ![AppVeyor](godaddydomain-passed-brightgree.png)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=plastic)]()
+[![Jenkins coverage](https://img.shields.io/jenkins/c/https/jenkins.qa.ubuntu.com/view/Utopic/view/All/job/address-book-service-utopic-i386-ci.svg?style=plastic)]()
