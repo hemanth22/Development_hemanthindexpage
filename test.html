@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Testing javascript</title>
+<script type="text/javascript">
+window.onload=function() {
+  // Month,Day,Year,Hour,Minute,Second
+  upTime('aug,11,2016,00:00:00'); // ****** Change this line!
+};
+function upTime(countTo) {
+  now = new Date();
+  countTo = new Date(countTo);
+  difference = (now-countTo);
+  days=Math.floor(difference/(60*60*1000*24)*1);
+  years = Math.floor(days / 365);
+  if (years > 1){ days = days - (years * 365)}
+  hours=Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
+  mins=Math.floor(((difference%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
+  secs=Math.floor((((difference%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
+  document.getElementById('years').firstChild.nodeValue = years;
+  document.getElementById('days').firstChild.nodeValue = days;
+  document.getElementById('hours').firstChild.nodeValue = hours;
+  document.getElementById('minutes').firstChild.nodeValue = mins;
+  document.getElementById('seconds').firstChild.nodeValue = secs;
+
+  clearTimeout(upTime.to);
+  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
+}
+</script>
+</head>
+<body>
+  <div id="countup">
+    It's been <p id="years">00</p> <p class="timeRefYears">years</p> <p id="days">00</p> <p class="timeRefDays">days</p>
+
+    <!-- <p id="hours">00</p> <p class="timeRefHours">hours</p> <p id="minutes">00</p>
+ <p class="timeRefMinutes">minutes</p>
+    <p id="seconds">00</p>
+    <p class="timeRefSeconds">second</p> -->
+  </div>
+</body>
+</html>
