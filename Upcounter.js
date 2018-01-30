@@ -1,4 +1,4 @@
-window.onload = function() {
+function upTime() {
   // Month,Day,Year,Hour,Minute,Second
   upTime('aug,11,2016,12:00:00'); // ****** Change this line!
 };
