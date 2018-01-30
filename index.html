@@ -118,8 +118,9 @@
 		</div>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script>
-			window.onload = function(){
-upTime(countTo)
+			window.onload = start
+			start(){
+upTime('aug,11,2016,12:00:00');
 function() { document.body.className = ''; }}
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }

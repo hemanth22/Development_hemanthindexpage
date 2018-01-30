@@ -1,5 +1,5 @@
   // Month,Day,Year,Hour,Minute,Second
-upTime('aug,11,2016,12:00:00'); // ****** Change this line!
+//upTime('aug,11,2016,12:00:00'); // ****** Change this line!
 
 function upTime(countTo) {
   var now = new Date(), countTo = new Date(countTo),
