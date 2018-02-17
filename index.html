@@ -50,7 +50,7 @@
 				<!--	<img class="lov" src="Bitra_Hemanth.png" alt="Bitra Hemanth" width="150" height="150">
 						<h1>Bitra Hemanth</h1> -->
 						<h2 style="color: white;font-size: 20px;font-style: oblique;font-weight: 300;"> Interest and Credit Derivative Back Office Support Engineer at Société Générale Global Solution Center</h2>
-						<script src="Upcounter.js"></script>
+						<!-- <script src="Upcounter.js"></script> -->
 						<div id="countup" align="center">
 				      <table border="0">
 				        <td><p>It's been</p></td>
@@ -61,7 +61,7 @@
 				        <td><p id="days">00</p></td>
 				        <td><p class="timeRefDays">days</p></td>
 				        <td><p>working with Société Générale</p></td>
-				        </table>
+							</table>
 
 				      <!-- <p id="hours">00</p>
 				      <p class="timeRefHours">hours</p>
@@ -122,10 +122,57 @@
 		</div>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script>
-			window.onload = start
-			start(){
-upTime('aug,11,2016,12:00:00');
-function() { document.body.className = ''; }}
+		window.onload = function() {
+  // Month,Day,Year,Hour,Minute,Second
+  upTime('aug,11,2016,12:00:00'); // ****** Change this line!
+};
+
+function upTime(countTo) {
+  var now = new Date(), countTo = new Date(countTo),
+    years  = now.getFullYear()-countTo.getFullYear(),
+    months = now.getMonth()   -countTo.getMonth(),
+    days   = now.getDate()    -countTo.getDate(),
+    hours  = now.getHours()   -countTo.getHours(),
+    mins   = now.getMinutes() -countTo.getMinutes(),
+    secs   = now.getSeconds() -countTo.getSeconds();
+  if (months<0) {
+    years--;
+    months += 12;
+  }
+  if (days<0) {
+    months--;
+    var daysOfMonth = new Date(now.getTime())
+    daysOfMonth.setMonth(now.getMonth()+1)
+    daysOfMonth.setDate(0);
+    days+=daysOfMonth.getDate();
+  }
+  if (hours<0) {
+    days--;
+    hours+=24;
+  }
+  if (mins<0) {
+    hours--;
+    mins+=60;
+  }
+  if (secs<0) {
+    mins--;
+    secs+=60;
+  }
+  if (months<0) months = 0;
+
+
+  document.getElementById('years'  ).innerHTML = years;
+  document.getElementById('months' ).innerHTML = months;
+  document.getElementById('days'   ).innerHTML = days;
+  document.getElementById('hours'  ).innerHTML = hours;
+  document.getElementById('minutes').innerHTML = mins;
+  document.getElementById('seconds').innerHTML = secs;
+
+  clearTimeout(upTime.to);
+  upTime.to = setTimeout(function() {
+    upTime(countTo);
+  }, 1000);
+}
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
